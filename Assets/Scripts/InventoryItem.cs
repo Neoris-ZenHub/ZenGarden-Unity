@@ -22,9 +22,11 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         transform.position = Input.mousePosition;
     }
 
-    public void OnEndDrag (PointerEventData eventData){
-        Debug.Log("End drag");
-        transform.SetParent(parentAfterDrag);
-        image.raycastTarget = true;
+    public void OnEndDrag(PointerEventData eventData) {
+    if (parentAfterDrag != null) {
+        this.transform.SetParent(parentAfterDrag);
+    } else {
+        transform.position = originalPosition;
     }
+}
 }
