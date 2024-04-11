@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class FollowMouseOnClick : MonoBehaviour {
-    private bool isFollowing = true; // Variable para rastrear si el objeto sigue el cursor
+    private bool isFollowing = false; // Variable para rastrear si el objeto sigue el cursor
     private Vector3 targetPosition; // Posición de destino para el objeto
     public float moveSpeed = 0.1f;
 
