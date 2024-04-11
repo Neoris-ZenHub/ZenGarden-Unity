@@ -13,7 +13,6 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         Debug.Log("Begin drag");
         parentAfterDrag = transform.parent;
         transform.SetParent(transform.root);
-        transform.SetAsLastSibling();
         image.raycastTarget = false;
     }
 
