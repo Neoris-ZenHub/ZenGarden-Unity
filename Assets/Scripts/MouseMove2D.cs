@@ -5,9 +5,6 @@ public class FollowMouseOnClick : MonoBehaviour {
     private Vector3 targetPosition; // Posición de destino para el objeto
     public float moveSpeed = 0.1f;
 
-    // Agrega esta línea
-    public static GameObject selectedObject = null;
-
     void Update () {
         if (isFollowing) {
             // Si está siguiendo, actualiza la posición de destino a la posición del cursor
@@ -22,12 +19,5 @@ public class FollowMouseOnClick : MonoBehaviour {
     void OnMouseDown() {
         // Cambiar el estado de seguimiento cuando se hace clic sobre el objeto
         isFollowing = !isFollowing;
-
-        // Agrega estas líneas
-        if (isFollowing) {
-            selectedObject = gameObject;
-        } else {
-            selectedObject = null;
-        }
     }
 }
