@@ -4145,7 +4145,7 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
+    width: 0.87
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -6319,6 +6319,11 @@ SpriteRenderer:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3760561424696166520, guid: 08e40c9b2c1664cf090b525aff4afbf0, type: 3}
   m_PrefabInstance: {fileID: 1158297406}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &545182745 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5683924655128982706, guid: 41b9904899140406da7c68576274c1a7, type: 3}
+  m_PrefabInstance: {fileID: 777068290}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &559451704
 GameObject:
@@ -8978,6 +8983,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1797129711}
     m_Modifications:
+    - target: {fileID: -8532417142978312848, guid: 41b9904899140406da7c68576274c1a7, type: 3}
+      propertyPath: clone
+      value: 
+      objectReference: {fileID: 545182745}
+    - target: {fileID: -8532417142978312848, guid: 41b9904899140406da7c68576274c1a7, type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 1171893873}
+    - target: {fileID: -8532417142978312848, guid: 41b9904899140406da7c68576274c1a7, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 5683924655128982706, guid: 41b9904899140406da7c68576274c1a7, type: 3}
+    - target: {fileID: -8532417142978312848, guid: 41b9904899140406da7c68576274c1a7, type: 3}
+      propertyPath: objectSpawner
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2352647396934093397, guid: 41b9904899140406da7c68576274c1a7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -9061,6 +9082,10 @@ PrefabInstance:
     - target: {fileID: 5683924655128982706, guid: 41b9904899140406da7c68576274c1a7, type: 3}
       propertyPath: m_Name
       value: InventoryItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 6966978432723603482, guid: 41b9904899140406da7c68576274c1a7, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13135,6 +13160,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2352647396934093397, guid: 41b9904899140406da7c68576274c1a7, type: 3}
   m_PrefabInstance: {fileID: 777068290}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1171893873 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6966978432723603482, guid: 41b9904899140406da7c68576274c1a7, type: 3}
+  m_PrefabInstance: {fileID: 777068290}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545182745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1201189563
 GameObject:
   m_ObjectHideFlags: 0
