@@ -3,10 +3,22 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
-{   
+{
+    [Header("UI")]
     public Image image;
+
+    public Item item;
     [HideInInspector] public Transform parentAfterDrag;
-    
+
+    private void Start()
+    {
+        InitialiseItem(item);
+    }
+    public void InitialiseItem(Item newItem)
+    {
+        //item = newItem;
+        image.sprite = newItem.image;
+    }
     public void OnBeginDrag (PointerEventData eventData){
         Debug.Log("Begin drag");
         parentAfterDrag = transform.parent;
