@@ -9,7 +9,7 @@ public class InventoryManager : MonoBehaviour
 
    public void AddItem(Item item){
         for (int i = 0; i < inventorySlots.Length; i++){
-            InventorySlot slot = inventorySlots[i];
+            InventorySlot slot = inventorySlotss[i];
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             if (itemInSlot == null){
                 SpawnNewItem(item, slot);
@@ -23,4 +23,23 @@ public class InventoryManager : MonoBehaviour
         InventoryItem inventoryItem = newItemGo.GetComponent<InventoryItem>();
         inventoryItem.InitialiseItem(item);
    }
+
+    public Item GetSelectedItem(bool use){
+        InventorySlot slot = inventorySlots[selectedSlot];
+        InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+        if(itemInSlot != null){
+            Item item = itemInSlot.item;
+            if(use == true){
+                itemInSlot.count--;
+                if(itemInSlot.count <= 0){
+                    Destroy(itemInSlot.gameObject);
+                }
+                else{
+                    itemInSlot.RefreshCount();
+                }
+            }
+            return item;
+        }
+        return null;
+    }
 }
