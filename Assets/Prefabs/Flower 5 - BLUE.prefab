@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 141127664784480474}
   - component: {fileID: 939667213235641259}
-  - component: {fileID: -8602518861180644204}
   - component: {fileID: -7912348150463428179}
   m_Layer: 0
   m_Name: Flower 5 - BLUE
@@ -86,19 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-8602518861180644204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5812840749246481725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8aa42b33da5310478c2e4f3420cb160, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 1
 --- !u!61 &-7912348150463428179
 BoxCollider2D:
   m_ObjectHideFlags: 0
