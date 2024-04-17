@@ -9,7 +9,7 @@ public class InventoryManager : MonoBehaviour
 
    public void AddItem(Item item){
         for (int i = 0; i < inventorySlots.Length; i++){
-            InventorySlot slot = inventorySlotss[i];
+            InventorySlot slot = inventorySlots[i];
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             if (itemInSlot == null){
                 SpawnNewItem(item, slot);
@@ -23,7 +23,7 @@ public class InventoryManager : MonoBehaviour
         InventoryItem inventoryItem = newItemGo.GetComponent<InventoryItem>();
         inventoryItem.InitialiseItem(item);
    }
-
+    /*
     public Item GetSelectedItem(bool use){
         InventorySlot slot = inventorySlots[selectedSlot];
         InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
@@ -42,4 +42,5 @@ public class InventoryManager : MonoBehaviour
         }
         return null;
     }
+    */
 }
