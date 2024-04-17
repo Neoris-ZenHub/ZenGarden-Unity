@@ -20,10 +20,12 @@ public class Item : ScriptableObject
 }
 public enum ItemType
 {
-    Tool
+    Tool,
+    Plant
 }
 public enum ActionType
 {
     Dig,
-    Mine
+    Plant,
+
 }
