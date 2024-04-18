@@ -29,13 +29,47 @@ public class InventorySlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, 
         image.color = notSelectedColor;
     }
 
-    public void OnDrop(PointerEventData eventData)
+    /* public void OnDrop(PointerEventData eventData)
     {
         if (transform.childCount == 0)
         {
             GameObject dropped = eventData.pointerDrag;
             InventoryItem draggableItem = dropped.GetComponent<InventoryItem>();
             draggableItem.parentAfterDrag = transform;
+        }
+    } */
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        GameObject dropped = eventData.pointerDrag;
+        if (dropped != null)
+        {
+            InventoryItem droppedItem = dropped.GetComponent<InventoryItem>();
+
+            // Comprobar si la ranura de destino ya tiene un elemento
+            if (transform.childCount > 0)
+            {
+                // La ranura de destino ya tiene un item, intercambiar los items.
+                InventoryItem currentItem = transform.GetChild(0).GetComponent<InventoryItem>();
+                Transform droppedItemOriginalParent = droppedItem.parentAfterDrag;
+
+                // Mueve el item actual al original del que se soltó
+                currentItem.parentAfterDrag = droppedItemOriginalParent;
+                currentItem.transform.SetParent(droppedItemOriginalParent);
+                currentItem.transform.position = droppedItemOriginalParent.position;
+
+                // Mueve el item soltado al espacio libre
+                droppedItem.parentAfterDrag = transform;
+                droppedItem.transform.SetParent(transform);
+                droppedItem.transform.position = transform.position;
+            }
+            else
+            {
+                // La ranura de destino está vacía, mover el item soltado aquí.
+                droppedItem.parentAfterDrag = transform;
+                droppedItem.transform.SetParent(transform);
+                droppedItem.transform.position = transform.position;
+            }
         }
     }
 }
