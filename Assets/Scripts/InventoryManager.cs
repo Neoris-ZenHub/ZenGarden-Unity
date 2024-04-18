@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-   public InventorySlot[] inventorySlots;
-   public GameObject inventoryItemPrefab;
+    public InventorySlot[] inventorySlots;
+    public GameObject inventoryItemPrefab;
+    public PrefabSpawner prefabSpawner; // Añade una referencia al PrefabSpawner
 
-   int selectedSlot = -1;
+    int selectedSlot = -1;
 
     private void Start()
     {
@@ -16,11 +17,12 @@ public class InventoryManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.inputString != null)
+        if (Input.inputString != "")
         {
             bool isNumber = int.TryParse(Input.inputString, out int number);
-            if (isNumber && number > 0 && number < 8) {
-                ChangeSelectedSlot(number -1);
+            if (isNumber && number > 0 && number < 8)
+            {
+                ChangeSelectedSlot(number - 1);
             }
         }
     }
@@ -29,46 +31,22 @@ public class InventoryManager : MonoBehaviour
     {
         if (selectedSlot >= 0)
         {
-            inventorySlots[selectedSlot].Deselect();
+            inventorySlots[selectedSlot].Deselect(); // Asegura que Deselect() esté implementado en InventorySlot
         }
 
-        inventorySlots[newValue].Select();
+        inventorySlots[newValue].Select(); // Asegura que Select() esté implementado en InventorySlot
         selectedSlot = newValue;
     }
-   public void AddItem(Item item){
-        for (int i = 0; i < inventorySlots.Length; i++){
-            InventorySlot slot = inventorySlots[i];
-            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-            if (itemInSlot == null){
-                SpawnNewItem(item, slot);
-                return;
-            }
-        }
-   }
 
-   void SpawnNewItem(Item item, InventorySlot slot){
-        GameObject newItemGo = Instantiate(inventoryItemPrefab, slot.transform);
-        InventoryItem inventoryItem = newItemGo.GetComponent<InventoryItem>();
-        inventoryItem.InitialiseItem(item);
-   }
-    /*
-    public Item GetSelectedItem(bool use){
-        InventorySlot slot = inventorySlots[selectedSlot];
-        InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-        if(itemInSlot != null){
-            Item item = itemInSlot.item;
-            if(use == true){
-                itemInSlot.count--;
-                if(itemInSlot.count <= 0){
-                    Destroy(itemInSlot.gameObject);
-                }
-                else{
-                    itemInSlot.RefreshCount();
-                }
-            }
-            return item;
-        }
-        return null;
+    public void AddItem(Item item)
+    {
+        // Usar el PrefabSpawner para añadir items
+        prefabSpawner.SpawnItemInInventory(item);
     }
-    */
+
+    // Método delegado a PrefabSpawner para instanciar nuevos items
+    void SpawnNewItem(Item item, InventorySlot slot)
+    {
+        prefabSpawner.SpawnItem(item, slot); // Asumiendo que esta función existe en PrefabSpawner
+    }
 }
