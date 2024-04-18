@@ -4145,15 +4145,15 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.12
     y: 0
-    width: 1.16
-    height: 1
+    width: 0.83
+    height: 1.25
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 1002.65
   field of view: 60
   orthographic: 1
-  orthographic size: 5.025916
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -20423,7 +20423,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1386970977}
         m_TargetAssemblyTypeName: PrefabSpawner, Assembly-CSharp
-        m_MethodName: SpawnNextItemInInventory
+        m_MethodName: LoadAllItems
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

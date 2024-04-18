@@ -40,7 +40,7 @@ public class InventoryManager : MonoBehaviour
     */
     public void AddItem(Item item){
         // Use the PrefabSpawner to add items
-        prefabSpawner.SpawnNextItemInInventory();
+        prefabSpawner.LoadAllItems();
     }
 
 
