@@ -5,6 +5,7 @@ public class PrefabSpawner : MonoBehaviour
     public GameObject inventoryItemPrefab; // Prefab de InventoryItem
     public InventorySlot[] inventorySlots; // Arreglo de todos los slots del inventario
     public Item[] items; // Array of all possible items
+    private int currentItemIndex = 0; // Index to track the current item to be spawned
 
     private void Start()
     {
@@ -12,8 +13,8 @@ public class PrefabSpawner : MonoBehaviour
         items = Resources.LoadAll<Item>("UnlockedItems");
     }
 
-    // Método para añadir un item al primer slot disponible
-    public void SpawnRandomItemInInventory()
+    // Método para añadir un item al primer slot disponible en orden secuencial
+    public void SpawnNextItemInInventory()
     {
         if (items.Length == 0) // Check if the items array is empty
         {
@@ -21,7 +22,13 @@ public class PrefabSpawner : MonoBehaviour
             return;
         }
 
-        Item item = items[Random.Range(0, items.Length)]; // Select a random item
+        if (currentItemIndex >= items.Length) // Check if all items have been spawned
+        {
+            Debug.Log("All items have been spawned. Resetting index.");
+            currentItemIndex = 0; // Reset the index or you can also choose to stop spawning
+        }
+
+        Item item = items[currentItemIndex++]; // Select the next item in the array and increment the index
 
         foreach (InventorySlot slot in inventorySlots)
         {

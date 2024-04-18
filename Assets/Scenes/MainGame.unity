@@ -20423,7 +20423,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1386970977}
         m_TargetAssemblyTypeName: PrefabSpawner, Assembly-CSharp
-        m_MethodName: SpawnRandomItemInInventory
+        m_MethodName: SpawnNextItemInInventory
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25158,8 +25158,8 @@ SceneRoots:
   - {fileID: 399690968}
   - {fileID: 1595128383}
   - {fileID: 987046676}
-  - {fileID: 1235864194}
   - {fileID: 47486553}
+  - {fileID: 1235864194}
   - {fileID: 1679421968}
   - {fileID: 716594271}
   - {fileID: 274697184}
