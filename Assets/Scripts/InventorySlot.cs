@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour, IDropHandler
 {
     public Image image;
-    public Color selectedColor, notSelectedColor;
-
+    //public Color selectedColor, notSelectedColor;
+    /*
     private void Awake()
     {
         Deselect();
@@ -22,6 +22,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     {
         image.color = notSelectedColor;
     }
+    */
     public void OnDrop(PointerEventData eventData){
         if (transform.childCount == 0){
             GameObject dropped = eventData.pointerDrag;

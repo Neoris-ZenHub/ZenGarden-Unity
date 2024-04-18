@@ -4,10 +4,25 @@ public class PrefabSpawner : MonoBehaviour
 {
     public GameObject inventoryItemPrefab; // Prefab de InventoryItem
     public InventorySlot[] inventorySlots; // Arreglo de todos los slots del inventario
+    public Item[] items; // Array of all possible items
+
+    private void Start()
+    {
+        // Load all items from the "Items" folder in the Resources directory
+        items = Resources.LoadAll<Item>("Items");
+    }
 
     // Método para añadir un item al primer slot disponible
-    public void SpawnItemInInventory(Item item)
+    public void SpawnRandomItemInInventory()
     {
+        if (items.Length == 0) // Check if the items array is empty
+        {
+            Debug.Log("No items to spawn");
+            return;
+        }
+
+        Item item = items[Random.Range(0, items.Length)]; // Select a random item
+
         foreach (InventorySlot slot in inventorySlots)
         {
             if (slot.transform.childCount == 0) // Verifica si el slot está vacío

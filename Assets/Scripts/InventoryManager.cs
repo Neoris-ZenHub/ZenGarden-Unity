@@ -7,9 +7,9 @@ public class InventoryManager : MonoBehaviour
     public InventorySlot[] inventorySlots;
     public GameObject inventoryItemPrefab;
     public PrefabSpawner prefabSpawner; // Añade una referencia al PrefabSpawner
-
+    /*
     int selectedSlot = -1;
-
+    
     private void Start()
     {
         ChangeSelectedSlot(0);
@@ -26,7 +26,7 @@ public class InventoryManager : MonoBehaviour
             }
         }
     }
-
+    
     void ChangeSelectedSlot(int newValue)
     {
         if (selectedSlot >= 0)
@@ -37,12 +37,12 @@ public class InventoryManager : MonoBehaviour
         inventorySlots[newValue].Select(); // Asegura que Select() esté implementado en InventorySlot
         selectedSlot = newValue;
     }
-
-    public void AddItem(Item item)
-    {
-        // Usar el PrefabSpawner para añadir items
-        prefabSpawner.SpawnItemInInventory(item);
+    */
+    public void AddItem(Item item){
+        // Use the PrefabSpawner to add items
+        prefabSpawner.SpawnRandomItemInInventory();
     }
+
 
     // Método delegado a PrefabSpawner para instanciar nuevos items
     void SpawnNewItem(Item item, InventorySlot slot)
