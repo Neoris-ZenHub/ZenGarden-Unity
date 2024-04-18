@@ -11,6 +11,9 @@ public class PrefabSpawner : MonoBehaviour
         // Load all items from the "Items" folder in the Resources directory
         items = Resources.LoadAll<Item>("UnlockedItems");
 
+        // Log the details of the items array
+        Debug.Log(items);
+
         // Carga todos los items automáticamente al iniciar
         LoadAllItems();
     }
