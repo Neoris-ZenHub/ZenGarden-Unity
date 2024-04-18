@@ -9,7 +9,7 @@ public class PrefabSpawner : MonoBehaviour
     private void Start()
     {
         // Load all items from the "Items" folder in the Resources directory
-        items = Resources.LoadAll<Item>("Items");
+        items = Resources.LoadAll<Item>("UnlockedItems");
     }
 
     // Método para añadir un item al primer slot disponible
