@@ -11,10 +11,19 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     [HideInInspector] public Transform parentAfterDrag;
 
     public void InitialiseItem(Item newItem)
+{
+    Debug.Log("Initialising item with newItem: " + (newItem != null ? newItem.name : "null"));
+    Debug.Log("Image component is: " + (image != null ? "assigned" : "null"));
+
+    if (newItem == null || image == null)
     {
-        item = newItem;
-        image.sprite = newItem.image;
+        Debug.LogError("InitialiseItem received null newItem or image is not assigned.");
+        return;
     }
+    item = newItem;
+    image.sprite = newItem.image;
+}
+
     public void OnBeginDrag (PointerEventData eventData){
         Debug.Log("Begin drag");
         parentAfterDrag = transform.parent;
