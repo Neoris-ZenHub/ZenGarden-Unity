@@ -9,7 +9,9 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     [HideInInspector] public Item item;
     [HideInInspector] public Transform parentAfterDrag;
-    
+
+    private bool isSelected = false;
+
     public void InitialiseItem(Item newItem){
         Debug.Log("Initialising item with newItem: " + (newItem != null ? newItem.name : "null"));
         Debug.Log("Image component is: " + (image != null ? "assigned" : "null"));
@@ -38,7 +40,8 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     }
 
 
-    public void OnEndDrag (PointerEventData eventData){
+    public void OnEndDrag(PointerEventData eventData)
+    {
         Debug.Log("End drag");
         transform.SetParent(parentAfterDrag);
         image.raycastTarget = true;

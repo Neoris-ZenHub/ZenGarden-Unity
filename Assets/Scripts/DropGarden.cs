@@ -12,8 +12,8 @@ public class DropGarden : MonoBehaviour, IDropHandler
         draggableItem.parentAfterDrag = transform;
 
         // Get random coordinates within the specified range
-        float randomX = Random.Range(-8.61f, 9.01f);
-        float randomY = Random.Range(-2.77f, 4.44f);
+        float randomX = Random.Range(-8.4f, 8.8f);
+        float randomY = Random.Range(-2.6f, 4.2f);
         float randomZ = 0f; // Assuming the object remains at the same Z-coordinate
 
         // Set the position of the dropped object to the random coordinates

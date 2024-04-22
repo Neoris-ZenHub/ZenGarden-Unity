@@ -7,6 +7,8 @@ public class InventoryManager : MonoBehaviour
     public InventorySlot[] inventorySlots;
     public GameObject inventoryItemPrefab;
     public PrefabSpawner prefabSpawner; // Añade una referencia al PrefabSpawner
+
+
     /*
     int selectedSlot = -1;
     
