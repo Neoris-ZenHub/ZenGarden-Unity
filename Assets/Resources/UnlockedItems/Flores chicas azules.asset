@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79b8c6d5bd5e94b4084a4e399aa71821, type: 3}
-  m_Name: Flower8
+  m_Name: Flores chicas azules
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
   type: 1
   actionType: 1
   range: {x: 5, y: 4}
-  image: {fileID: 21300000, guid: 5529ea37adf460045a0069551c7ac58f, type: 3}
+  image: {fileID: 21300000, guid: 8d0cdd210ea366f4bbce92234b874cff, type: 3}
