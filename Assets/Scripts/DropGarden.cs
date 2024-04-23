@@ -5,6 +5,13 @@ using UnityEngine.EventSystems;
 
 public class DropGarden : MonoBehaviour, IDropHandler
 {
+    [SerializeField] private AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     public void OnDrop(PointerEventData eventData)
     {
         GameObject dropped = eventData.pointerDrag;
@@ -18,5 +25,10 @@ public class DropGarden : MonoBehaviour, IDropHandler
 
         // Set the position of the dropped object to the random coordinates
         dropped.transform.position = new Vector3(randomX, randomY, randomZ);
+
+        if (audioSource != null && audioSource.clip != null)
+        {
+            audioSource.Play();
+        }
     }
 }
