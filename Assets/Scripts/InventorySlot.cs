@@ -29,16 +29,6 @@ public class InventorySlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, 
         image.color = notSelectedColor;
     }
 
-    /* public void OnDrop(PointerEventData eventData)
-    {
-        if (transform.childCount == 0)
-        {
-            GameObject dropped = eventData.pointerDrag;
-            InventoryItem draggableItem = dropped.GetComponent<InventoryItem>();
-            draggableItem.parentAfterDrag = transform;
-        }
-    } */
-
     public void OnDrop(PointerEventData eventData)
     {
         GameObject dropped = eventData.pointerDrag;
