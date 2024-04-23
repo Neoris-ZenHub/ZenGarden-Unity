@@ -8,38 +8,6 @@ public class InventoryManager : MonoBehaviour
     public GameObject inventoryItemPrefab;
     public PrefabSpawner prefabSpawner; // Añade una referencia al PrefabSpawner
 
-
-    /*
-    int selectedSlot = -1;
-    
-    private void Start()
-    {
-        ChangeSelectedSlot(0);
-    }
-
-    private void Update()
-    {
-        if (Input.inputString != "")
-        {
-            bool isNumber = int.TryParse(Input.inputString, out int number);
-            if (isNumber && number > 0 && number < 8)
-            {
-                ChangeSelectedSlot(number - 1);
-            }
-        }
-    }
-    
-    void ChangeSelectedSlot(int newValue)
-    {
-        if (selectedSlot >= 0)
-        {
-            inventorySlots[selectedSlot].Deselect(); // Asegura que Deselect() esté implementado en InventorySlot
-        }
-
-        inventorySlots[newValue].Select(); // Asegura que Select() esté implementado en InventorySlot
-        selectedSlot = newValue;
-    }
-    */
     public void AddItem(Item item){
         // Use the PrefabSpawner to add items
         prefabSpawner.LoadAllItems();
