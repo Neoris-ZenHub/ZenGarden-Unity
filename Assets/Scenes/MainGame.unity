@@ -23613,9 +23613,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
   playlist:
-  - {fileID: 8300000, guid: 2ce63e5a6ffabc44b83abcdb6c98e66d, type: 3}
-  - {fileID: 8300000, guid: 17ab34e2f5ddd22408651b49383e661d, type: 3}
-  - {fileID: 8300000, guid: 4673c4a7a6f2a604db548caeae2d17b5, type: 3}
+  - {fileID: 8300000, guid: 6ffdbd5e412171244b246b5fa1e7ebdf, type: 3}
+  - {fileID: 8300000, guid: 548a0ab458b10b041ae2ca55fcbd6359, type: 3}
+  - {fileID: 8300000, guid: edc614081a3eace4aba4599223752fef, type: 3}
   currentTrackIndex: 0
   shuffle: 0
 --- !u!1 &2022151356

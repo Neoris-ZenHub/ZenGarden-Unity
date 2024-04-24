@@ -7,6 +7,11 @@ public class MusicPlayer : MonoBehaviour
     public int currentTrackIndex = 0;
     public bool shuffle = false;
 
+    /*private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }*/
+
     private void Start()
     {
         if (audioSource == null)
