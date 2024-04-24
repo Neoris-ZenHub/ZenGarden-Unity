@@ -10,7 +10,21 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     [HideInInspector] public Item item;
     [HideInInspector] public Transform parentAfterDrag;
 
-    //private bool isSelected = false;
+    //private bool isSelected = false;void Start()
+    void Start()
+    {
+        // Get the Animator component
+        Animator animator = GetComponent<Animator>();
+        if (animator != null)
+        {
+            // Set the "PlayAnimation" boolean to false
+            animator.SetBool("PlayAnimation", false);
+        }
+    }
+
+
+
+
 
     public void InitialiseItem(Item newItem){
         Debug.Log("Initialising item with newItem: " + (newItem != null ? newItem.name : "null"));

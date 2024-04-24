@@ -43,7 +43,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, 
                 InventoryItem currentItem = transform.GetChild(0).GetComponent<InventoryItem>();
                 Transform droppedItemOriginalParent = droppedItem.parentAfterDrag;
 
-                // Mueve el item actual al original del que se soltó
+                // Mueve el item actual al original del que se soltï¿½
                 currentItem.parentAfterDrag = droppedItemOriginalParent;
                 currentItem.transform.SetParent(droppedItemOriginalParent);
                 currentItem.transform.position = droppedItemOriginalParent.position;
@@ -55,7 +55,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, 
             }
             else
             {
-                // La ranura de destino está vacía, mover el item soltado aquí.
+                // La ranura de destino estï¿½ vacï¿½a, mover el item soltado aquï¿½.
                 droppedItem.parentAfterDrag = transform;
                 droppedItem.transform.SetParent(transform);
                 droppedItem.transform.position = transform.position;

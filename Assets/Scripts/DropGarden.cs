@@ -12,23 +12,30 @@ public class DropGarden : MonoBehaviour, IDropHandler
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void OnDrop(PointerEventData eventData)
+  public void OnDrop(PointerEventData eventData)
+  {
+    GameObject dropped = eventData.pointerDrag;
+    InventoryItem draggableItem = dropped.GetComponent<InventoryItem>();
+    draggableItem.parentAfterDrag = transform;
+
+    // Get random coordinates within the specified range
+    float randomX = Random.Range(-8.4f, 8.8f);
+    float randomY = Random.Range(-2.6f, 4.2f);
+    float randomZ = 0f; // Assuming the object remains at the same Z-coordinate
+
+    // Set the position of the dropped object to the random coordinates
+    dropped.transform.position = new Vector3(randomX, randomY, randomZ);
+
+    // Play the animation
+    Animator animator = dropped.GetComponent<Animator>();
+    if (animator != null)
     {
-        GameObject dropped = eventData.pointerDrag;
-        InventoryItem draggableItem = dropped.GetComponent<InventoryItem>();
-        draggableItem.parentAfterDrag = transform;
-
-        // Get random coordinates within the specified range
-        float randomX = Random.Range(-8.4f, 8.8f);
-        float randomY = Random.Range(-2.6f, 4.2f);
-        float randomZ = 0f; // Assuming the object remains at the same Z-coordinate
-
-        // Set the position of the dropped object to the random coordinates
-        dropped.transform.position = new Vector3(randomX, randomY, randomZ);
-
-        if (audioSource != null && audioSource.clip != null)
-        {
-            audioSource.Play();
-        }
+        animator.SetBool("PlayAnimation", true);
     }
+
+    if (audioSource != null && audioSource.clip != null)
+    {
+        audioSource.Play();
+    }
+ }
 }
