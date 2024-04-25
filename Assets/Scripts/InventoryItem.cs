@@ -21,11 +21,6 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             animator.SetBool("PlayAnimation", false);
         }
     }
-
-
-
-
-
     public void InitialiseItem(Item newItem){
         Debug.Log("Initialising item with newItem: " + (newItem != null ? newItem.name : "null"));
         Debug.Log("Image component is: " + (image != null ? "assigned" : "null"));
@@ -53,11 +48,19 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
     }
 
-
     public void OnEndDrag(PointerEventData eventData)
     {
         Debug.Log("End drag");
         transform.SetParent(parentAfterDrag);
         image.raycastTarget = true;
+    }
+
+    public void AnimationEnded()
+    {
+        Animator animator = GetComponent<Animator>();
+        if (animator != null)
+        {
+        animator.SetBool("PlayAnimation", false);
+        }
     }
 }
