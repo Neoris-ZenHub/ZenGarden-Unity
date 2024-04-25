@@ -1242,7 +1242,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -35.89, y: 50.910004}
+  m_AnchoredPosition: {x: -35.89, y: 50.910156}
   m_SizeDelta: {x: 541.23, y: 68.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &90048420
@@ -3082,7 +3082,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 993.1, y: 600.23}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -4130,7 +4130,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -9893,7 +9893,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 274.04, y: 50.119995}
+  m_AnchoredPosition: {x: 274.04, y: 50.11914}
   m_SizeDelta: {x: 51.81, y: 50.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &867425703
@@ -18938,7 +18938,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 347.6, y: 52.16504}
+  m_AnchoredPosition: {x: 347.6, y: 52.164062}
   m_SizeDelta: {x: 72.08, y: 65.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1678230628
@@ -23500,8 +23500,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -401, y: 180}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -428.99, y: 225}
+  m_SizeDelta: {x: 82.02, y: 80.96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &2014054720
 AudioSource:
@@ -23515,7 +23515,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -23611,13 +23611,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a497ba3abdcd9348a7f5705112e3a1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 2014054720}
   playlist:
   - {fileID: 8300000, guid: 6ffdbd5e412171244b246b5fa1e7ebdf, type: 3}
   - {fileID: 8300000, guid: 548a0ab458b10b041ae2ca55fcbd6359, type: 3}
   - {fileID: 8300000, guid: edc614081a3eace4aba4599223752fef, type: 3}
+  - {fileID: 8300000, guid: 80aef513f15b8474c9d84e66a0b88121, type: 3}
+  - {fileID: 8300000, guid: 53879b45386616a44adaba13dc3c5eb9, type: 3}
+  - {fileID: 8300000, guid: 4ed7a05ed4990be4bab05d213f7ff6ea, type: 3}
+  - {fileID: 8300000, guid: 53879b45386616a44adaba13dc3c5eb9, type: 3}
+  - {fileID: 8300000, guid: 6a03aa9cdc5530a49a1bce358e92078b, type: 3}
   currentTrackIndex: 0
-  shuffle: 0
+  shuffle: 1
 --- !u!1 &2022151356
 GameObject:
   m_ObjectHideFlags: 0
