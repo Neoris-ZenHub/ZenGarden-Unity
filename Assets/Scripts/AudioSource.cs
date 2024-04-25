@@ -4,13 +4,13 @@ public class MusicPlayer : MonoBehaviour
 {
     public AudioSource audioSource;
     public AudioClip[] playlist;
-    public int currentTrackIndex = 0;
+    public int currentTrackIndex ;
     public bool shuffle = false;
 
-    /*private void Awake()
+    private void Awake()
     {
         DontDestroyOnLoad(gameObject);
-    }*/
+    }
 
     private void Start()
     {
