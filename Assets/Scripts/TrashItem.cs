@@ -12,15 +12,15 @@ public class TrashItem : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        // Obtener el item arrastrado
-        GameObject item = eventData.pointerDrag;
-        
-        Destroy(item);
-
-        // Activar sonido de reciclaje
+        // Activar sonido para trash
         if (audioSource != null && audioSource.clip != null)
         {
             audioSource.Play();
         }
+
+        // Obtener el item arrastrado
+        GameObject item = eventData.pointerDrag;
+        
+        Destroy(item);
     }
 }

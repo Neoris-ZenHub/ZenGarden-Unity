@@ -6,6 +6,9 @@ public class PrefabSpawner : MonoBehaviour
     public InventorySlot[] inventorySlots; // Arreglo de todos los slots del inventario
     public Item[] items; // Array of all possible items
 
+    [SerializeField] private AudioSource audioSource;
+    private bool isFirstLoad = true;
+
     private void Start()
     {
         // Load all items from the "Items" folder in the Resources directory
@@ -16,6 +19,8 @@ public class PrefabSpawner : MonoBehaviour
 
         // Carga todos los items automáticamente al iniciar
         LoadAllItems();
+
+        isFirstLoad = false; //Evitamos que el sonido se reproduzca la primera vez
     }
 
     // Método para cargar todos los items en los slots disponibles al inicio
@@ -31,6 +36,10 @@ public class PrefabSpawner : MonoBehaviour
                     SpawnItem(item, slot);
                     itemPlaced = true;
                     break; // Sale del bucle una vez que el item es colocado
+                }
+                if (!isFirstLoad && audioSource != null && audioSource.clip != null)
+                {
+                    audioSource.Play();
                 }
             }
             if (!itemPlaced)
