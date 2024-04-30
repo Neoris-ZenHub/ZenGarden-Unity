@@ -8,7 +8,7 @@ public class PrefabSpawner : MonoBehaviour
 {
     public GameObject inventoryItemPrefab; // Prefab de InventoryItem
     public InventorySlot[] inventorySlots; // Arreglo de todos los slots del inventario
-    private string userId = "7a267a8b-71e2-42c8-aaad-c8f7987efb33";
+    /*private string userId = "7a267a8b-71e2-42c8-aaad-c8f7987efb33";
     private string apiUrl = "http://localhost:4000/sprite/user";
 
     [SerializeField] private AudioSource audioSource;
@@ -126,7 +126,7 @@ public class PrefabSpawner : MonoBehaviour
         {
             inventoryItemComponent.InitialiseItem(item);
         }
-    }
+    }*/
 }
 
 public class SpritesResponse

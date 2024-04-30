@@ -2003,6 +2003,37 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3760561424696166520, guid: 08e40c9b2c1664cf090b525aff4afbf0, type: 3}
   m_PrefabInstance: {fileID: 826152339}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &159914372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 159914373}
+  m_Layer: 0
+  m_Name: puntosM (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &159914373
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159914372}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.8761082, y: -4.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 920736412}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &169029207
 GameObject:
   m_ObjectHideFlags: 0
@@ -7531,6 +7562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 670618566}
   - component: {fileID: 670618565}
+  - component: {fileID: 670618567}
   - component: {fileID: 670618564}
   m_Layer: 0
   m_Name: Cow
@@ -7620,13 +7652,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670618563}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.53, y: 1.52, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.87610817, y: -0.44818437, z: 0.020740815}
   m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 920736412}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &670618567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670618563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780b24147e9119444b919a1ee11a3d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  puntos:
+  - {fileID: 1952209838}
+  - {fileID: 780026775}
+  - {fileID: 159914373}
+  distancia: 0.2
+  intervaloCambio: 80
 --- !u!1 &672244358
 GameObject:
   m_ObjectHideFlags: 0
@@ -8057,37 +8108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15cc53800ca6e354a8a503bd7aed4c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySlots:
-  - {fileID: 1868350493}
-  - {fileID: 2136687118}
-  - {fileID: 645164034}
-  - {fileID: 1586170028}
-  - {fileID: 2107921305}
-  - {fileID: 2085887110}
-  - {fileID: 1736704761}
-  - {fileID: 615059989}
-  - {fileID: 1886257511}
-  - {fileID: 1216364029}
-  - {fileID: 1137953037}
-  - {fileID: 1491474114}
-  - {fileID: 1684149317}
-  - {fileID: 1813305479}
-  - {fileID: 1675050531}
-  - {fileID: 2129960861}
-  - {fileID: 1617044841}
-  - {fileID: 1954506361}
-  - {fileID: 1975320673}
-  - {fileID: 1315302857}
-  - {fileID: 1103118007}
-  - {fileID: 1570474757}
-  - {fileID: 2065178468}
-  - {fileID: 1855008268}
-  - {fileID: 1332794800}
-  - {fileID: 691910191}
-  - {fileID: 541639205}
-  - {fileID: 1609594206}
-  inventoryItemPrefab: {fileID: 5683924655128982706, guid: 41b9904899140406da7c68576274c1a7, type: 3}
-  prefabSpawner: {fileID: 0}
 --- !u!4 &716594271
 Transform:
   m_ObjectHideFlags: 0
@@ -9273,6 +9293,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08e40c9b2c1664cf090b525aff4afbf0, type: 3}
+--- !u!1 &780026774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 780026775}
+  m_Layer: 0
+  m_Name: puntosM (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &780026775
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780026774}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.8761082, y: -2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 920736412}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &785409350
 GameObject:
   m_ObjectHideFlags: 0
@@ -10330,6 +10381,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &920736411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 920736412}
+  m_Layer: 0
+  m_Name: Cow System
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &920736412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920736411}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.4061084, y: 1.9681844, z: -0.020740815}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 670618566}
+  - {fileID: 1952209838}
+  - {fileID: 780026775}
+  - {fileID: 159914373}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &933376061
 GameObject:
   m_ObjectHideFlags: 0
@@ -15957,8 +16043,6 @@ MonoBehaviour:
   - {fileID: 691910191}
   - {fileID: 541639205}
   - {fileID: 1609594206}
-  items: []
-  audioSource: {fileID: 1770723961}
 --- !u!4 &1386970978
 Transform:
   m_ObjectHideFlags: 0
@@ -19027,7 +19111,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d088bc28b9a7a9e4fbeb672a38bac48d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -20370,7 +20454,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dc83080bbd0541248834bd4a269e11d3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -22553,6 +22637,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1952209837
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1952209838}
+  m_Layer: 0
+  m_Name: puntosM
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1952209838
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952209837}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.8761082, y: 1.09, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 920736412}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1953987484
 GameObject:
   m_ObjectHideFlags: 0
@@ -23635,7 +23750,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 0.37
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -23900,7 +24015,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5d38c4682f1857f46bca9b74f36af84e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -25188,7 +25303,7 @@ SceneRoots:
   - {fileID: 1595128383}
   - {fileID: 987046676}
   - {fileID: 47486553}
-  - {fileID: 670618566}
+  - {fileID: 920736412}
   - {fileID: 1679421968}
   - {fileID: 716594271}
   - {fileID: 274697184}
