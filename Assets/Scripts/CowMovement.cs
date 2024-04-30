@@ -10,7 +10,6 @@ public class CowMovement : MonoBehaviour
 
     private int numAleatorio;
     public float intervaloCambio = 80f;
-
     private Animator animator;
 
     public void Start()
