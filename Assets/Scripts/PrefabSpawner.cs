@@ -8,43 +8,26 @@ public class PrefabSpawner : MonoBehaviour
 {
     public GameObject inventoryItemPrefab; // Prefab de InventoryItem
     public InventorySlot[] inventorySlots; // Arreglo de todos los slots del inventario
-    /*private string userId = "7a267a8b-71e2-42c8-aaad-c8f7987efb33";
+    private string token;
     private string apiUrl = "http://localhost:4000/sprite/user";
 
     [SerializeField] private AudioSource audioSource;
     private bool isFirstLoad = true;
 
-    private void Start()
+     public void SetToken(string token)
     {
-<<<<<<< HEAD
-        // Load all items from the "Items" folder in the Resources directory
-        items = Resources.LoadAll<Item>("UnlockedItems");
-
-        // Log the details of the items array
-        Debug.Log(items);
-
-        // Carga todos los items automáticamente al iniciar
-        LoadAllItems();
-
-        isFirstLoad = false; //Evitamos que el sonido se reproduzca la primera vez
-=======
-        Debug.Log("Iniciando petición para obtener sprites");
+        this.token = token;
+        Debug.Log("Token recibido: " + token);
         StartCoroutine(GetSpritesCoroutine());
->>>>>>> cd8a76f7ab362d223fa83905a8d4b4be26746513
     }
 
     IEnumerator GetSpritesCoroutine()
     {
-        Debug.Log("Preparando datos para la petición");
-        var requestObject = new { _id_user = userId };
-        string jsonBody = JsonConvert.SerializeObject(requestObject);
-        Debug.Log("JSON enviado: " + jsonBody);
 
-        var request = new UnityWebRequest(apiUrl, "POST");
-        byte[] jsonToSend = new UTF8Encoding().GetBytes(jsonBody);
-        request.uploadHandler = new UploadHandlerRaw(jsonToSend);
+        var request = new UnityWebRequest(apiUrl, "GET");
         request.downloadHandler = new DownloadHandlerBuffer();
         request.SetRequestHeader("Content-Type", "application/json");
+        request.SetRequestHeader("Authorization", "Bearer " + token); // Añade el token como un Bearer token en la cabecera de autorización
 
         yield return request.SendWebRequest();
 
@@ -75,21 +58,8 @@ public class PrefabSpawner : MonoBehaviour
             Item item = Resources.Load<Item>(spriteInfo.sprite_url);
             if (item != null)
             {
-<<<<<<< HEAD
-                if (slot.transform.childCount == 0) // Verifica si el slot está vacío
-                {
-                    SpawnItem(item, slot);
-                    itemPlaced = true;
-                    break; // Sale del bucle una vez que el item es colocado
-                }
-                if (!isFirstLoad && audioSource != null && audioSource.clip != null)
-                {
-                    audioSource.Play();
-                }
-=======
                 Debug.Log("Sprite cargado correctamente: " + item.name);
                 PlaceItemInInventory(item);
->>>>>>> cd8a76f7ab362d223fa83905a8d4b4be26746513
             }
             else
             {
@@ -126,7 +96,7 @@ public class PrefabSpawner : MonoBehaviour
         {
             inventoryItemComponent.InitialiseItem(item);
         }
-    }*/
+    }
 }
 
 public class SpritesResponse
