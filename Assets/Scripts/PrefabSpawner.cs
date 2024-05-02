@@ -13,17 +13,38 @@ public class PrefabSpawner : MonoBehaviour
 
     [SerializeField] private AudioSource audioSource;
     private bool isFirstLoad = true;
-
-     public void SetToken(string token)
+private void Start()
     {
-        this.token = token;
+        // Obtén el token desde el parámetro de la URL cuando la aplicación cargue
+        token = GetTokenFromURL();
         Debug.Log("Token recibido: " + token);
-        StartCoroutine(GetSpritesCoroutine());
+        if (!string.IsNullOrEmpty(token))
+        {
+            StartCoroutine(GetSpritesCoroutine());
+        }
+        else
+        {
+            Debug.LogError("Token no encontrado en la URL");
+        }
+    }
+
+    string GetTokenFromURL()
+    {
+        try
+        {
+            Url myUrl = new Url(Application.absoluteURL);
+            string param = HttpUtility.ParseQueryString(myUrl.Query).Get("token");
+            return param ?? string.Empty;
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("Error parsing URL: " + e.Message);
+            return string.Empty;
+        }
     }
 
     IEnumerator GetSpritesCoroutine()
     {
-
         var request = new UnityWebRequest(apiUrl, "GET");
         request.downloadHandler = new DownloadHandlerBuffer();
         request.SetRequestHeader("Content-Type", "application/json");
@@ -44,7 +65,7 @@ public class PrefabSpawner : MonoBehaviour
         }
     }
 
-    private void LoadSprites(SpriteInfo[] spriteInfos)
+    public void LoadSprites(SpriteInfo[] spriteInfos)
     {
         if (spriteInfos.Length == 0)
         {
