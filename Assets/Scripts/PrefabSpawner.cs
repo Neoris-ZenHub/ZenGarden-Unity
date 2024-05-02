@@ -15,32 +15,28 @@ public class PrefabSpawner : MonoBehaviour
     private bool isFirstLoad = true;
 private void Start()
     {
-        // Obtén el token desde el parámetro de la URL cuando la aplicación cargue
+        // Obtén el token del parámetro de la URL al inicio
         token = GetTokenFromURL();
         Debug.Log("Token recibido: " + token);
-        if (!string.IsNullOrEmpty(token))
-        {
-            StartCoroutine(GetSpritesCoroutine());
-        }
-        else
-        {
-            Debug.LogError("Token no encontrado en la URL");
-        }
+        StartCoroutine(GetSpritesCoroutine());
     }
 
     string GetTokenFromURL()
     {
-        try
+        if (Application.absoluteURL.IndexOf("?token=") != -1)
         {
-            Url myUrl = new Url(Application.absoluteURL);
-            string param = HttpUtility.ParseQueryString(myUrl.Query).Get("token");
-            return param ?? string.Empty;
+            string parameters = Application.absoluteURL.Split('?')[1];
+            string[] parms = parameters.Split('&');
+            foreach (var parm in parms)
+            {
+                string[] kvp = parm.Split('=');
+                if (kvp[0] == "token")
+                {
+                    return WWW.UnEscapeURL(kvp[1]);
+                }
+            }
         }
-        catch (Exception e)
-        {
-            Debug.LogError("Error parsing URL: " + e.Message);
-            return string.Empty;
-        }
+        return string.Empty;
     }
 
     IEnumerator GetSpritesCoroutine()
